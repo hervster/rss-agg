@@ -1,0 +1,11 @@
+services:
+    rss-agg-db:
+        container_name: rss-agg-db
+        image: postgres
+        environment:
+            - POSTGRES_PASSWORD=admin
+        volumes:
+            - rss-agg-db:/var/lib/postgresql
+            - rss-agg-db-data:/var/lib/postgresql/data
+        ports:
+            -   5433:5432
